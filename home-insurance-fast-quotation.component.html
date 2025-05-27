@@ -1,0 +1,151 @@
+
+<form [formGroup]="fastQuotationForm" (submit)="onSubmit()">
+    <div class="bg-white rounted-xl p-6 mob: p-3">
+        <p class="text-[#555555] text-sm" i18n>
+            Please complete in English
+        </p>
+        <p class="text-[#555555] text-sm mb-8" i18n>
+            *Required
+        </p>
+
+        <h4 i18n="@@homeInsuranceDetails"
+            class="inline-block text-3xl font-bold relative pb-4 after:absolute after:top-full after:left-0 after:w-1/2 after:w-[33px] after:h-[6px] after:bg-red mob:text-lg">
+            Insured premises</h4>
+        <div class="grid grid-cols-2 mob:grid-cols-1 gap-x-8 gap-y-4 w-11/12 tablet:w-full my-8">
+            <!--Duration-->
+            <mat-form-field class="w-full">
+                 <label class="mb-2 required" i18n="@@homeInsurancePeriod">Insured period</label>
+                <div class="form-input w-full h-full">
+                    <div class="relative inline-block w-fullmob:mt-0">
+                        <label i18n="@@travelSuranceStartDate" class="mb-3 mob:mb-1 required">Start date</label>
+                    </div>
+                </div>
+                <div class="input-container flex items-center gap-x-3 w-full border-b-2 border-[#B0ACC4]">
+                    <input class="flex-1 text-lg mob:text-sm text-primary-purple bg-transparent pb-2 " matInput
+                    [matDatepicker]="startDateDatepicker" formControlName="startDate" placeholder="DD-MM-YYYY"
+                    [min]="minStartDate" (click)="startDateDatepicker.open()" (dateChange)="onStartDateChange()"
+                    required />
+                    <mat-datepicker-toggle matIconSuffix [for]="startDateDatepicker" class="mat-mdc-icon-button">
+                    <mat-icon class="w-4" matDatepickerToggleIcon>
+                        @if ((this.fastQuotationForm.controls['startDate'].hasError('required') ||
+                        this.fastQuotationForm.controls['startDate'].hasError('matDatepickerMin') ||
+                        this.fastQuotationForm.controls['startDate'].hasError('invalidDate')) &&
+                        this.fastQuotationForm.controls['startDate'].touched) {
+                        <img src="assets/images/icons/field_calendar_red.svg" />
+                        }
+                        @else {
+                        <img src="assets/images/icons/field_calendar.svg" alt="i" />
+                        }
+                    </mat-icon>
+                </mat-datepicker-toggle>
+                <mat-datepicker msig-datepicker #startDateDatepicker />
+                @if (this.fastQuotationForm.controls['startDate'].hasError('required') &&
+                this.fastQuotationForm.controls['startDate'].touched) {
+                <mat-error class="text-[#E11F27]" i18n="@@travelSuranceStartDateRequiredError">Please select or enter
+                    the start date.</mat-error>
+                }
+                @if (this.fastQuotationForm.controls['startDate'].hasError('matDatepickerMin') &&
+                this.fastQuotationForm.controls['startDate'].touched) {
+                <mat-error class="text-[#E11F27]" i18n="@@travelSuranceExceedMinStartDateError">Invalid date</mat-error>
+                }
+                @if (this.fastQuotationForm.controls['startDate'].hasError('invalidDate') &&
+                this.fastQuotationForm.controls['startDate'].touched) {
+                <mat-error class="text-[#E11F27]" i18n="@@travelSuranceStartDateInvalidError">Invalid date</mat-error>
+                }
+                </div>
+            </mat-form-field>
+            
+            <mat-form-field class="w-full">
+                <div class="relative inline-block w-full mob:mt-0">
+                    <label i18n="@@travelSuranceEndDate" class="mb-2 mob:mb-1 required">End date</label>
+                </div>
+                <input class="flex-1 text-lg mob:text-sm text-primary-purple bg-transparent pb-2 " matInput
+                    [matDatepicker]="endDateDatepicker" formControlName="endDate" placeholder="DD-MM-YYYY"
+                    [min]="minEndDate" (click)="endDateDatepicker.open()" (dateChange)="onEndDateChange()" required />
+                <mat-datepicker-toggle matIconSuffix [for]="endDateDatepicker" class="mat-mdc-icon-button ">
+                    <mat-icon matDatepickerToggleIcon>
+                        @if (this.fastQuotationForm.controls['endDate'].hasError('required') &&
+                        this.fastQuotationForm.controls['endDate'].touched) {
+                        <img src="assets/images/icons/field_calendar_red.svg" />
+                        }
+                        @else {
+                        <img src="assets/images/icons/field_calendar.svg" alt="i" />
+                        }
+                    </mat-icon>
+                </mat-datepicker-toggle>
+                <mat-datepicker msig-datepicker #endDateDatepicker />
+                @if (this.fastQuotationForm.controls['endDate'].hasError('required') &&
+                this.fastQuotationForm.controls['endDate'].touched) {
+                <mat-error class="text-[#E11F27]" i18n="@@travelSuranceEndDateRequiredError">Please select or enter the
+                    end date.</mat-error>
+                }
+            </mat-form-field>
+
+            <div class="relative inline-block w-full mob:mt-0">
+                <label i18n="@@travelSuranceEndDate" class="mb-2 mob:mb-1 required">Construction Class I
+                </label>
+            </div>
+            <mat-radio-group [(ngModel)]="selectClass" class="mat-radio-group">
+                @for (typeArea of conClass; track typeArea.name) {
+                    <mat-radio-button [value]="typeArea.name">{{ typeArea.genName }}</mat-radio-button>
+                }
+
+            </mat-radio-group>
+
+            <div class="col-span-2 mob:col-span-1">
+                <div class="bg-[#F4F4F8] rounded-xl p-6 mob:p-0 flex-1 mob:p-2">
+                    <div class="form-input w-full h-full">
+                        <div class="relative inline-block w-full">
+                            <label i18n="@@travelSuranceStartDate" class="mb-2 mob:mb-1 required">Gross floor area range (sq. ft.)</label>
+                        </div>
+                    </div>
+                    <div class="input-container flex items-center gap-x-3 w-full border-b-2 border-[#B0ACC4]">
+                        <input type="number" class="flex-1 text-lg mob:text-sm text-primary-purple bg-transparent pb-2 "
+                            min="2" max="182" matInput formControlName="duration" (keypress)="numberOnly($event)" required />
+                        <span class="text-primary-purple" i18n="@@travelSuranceDurationSuffix"> </span>
+                    </div>
+                    <div class="form-input w-full h-full">
+                        <div class="relative inline-block w-full">
+                            <label i18n="@@travelSuranceStartDate" class="mb-2 mob:mb-1">Exact gross floor area (sq. ft.)</label>
+                        </div>
+                    </div>
+                    <div class="input-container flex items-center gap-x-3 w-full border-b-2 border-[#B0ACC4]">
+                        <input type="number" class="flex-1 text-lg mob:text-sm text-primary-purple bg-transparent pb-2 "
+                            min="2" max="182" matInput formControlName="duration" (keypress)="numberOnly($event)" required />
+                        <span class="text-primary-purple" i18n="@@travelSuranceDurationSuffix"> </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative inline-block w-full mob:mt-0">
+                <label i18n="@@travelSuranceEndDate" class="mb-2 mob:mb-1 required">Limit of indemnity
+                </label>
+            </div>
+                <mat-card>
+                    <div class="plan-table">
+                        <div class="plan-header">
+                            <div>Plan</div>
+                            <div>Content (HKD)</div>
+                            <div>Personal liability (HKD)</div>
+                            <div>Annual premium (HKD)</div>
+                        </div>
+
+                        <mat-radio-group [(ngModel)] = "selectedPlan">
+                            @for (plan of plans; track plan.name) {
+                                <div class="plan-row">
+                                    <mat-radio-button [value]="plan.name">{{ plan.name }}</mat-radio-button>
+                                    <div>{{ plan.contents || 'N/A' }}</div>
+                                    <div>{{ plan.liability || 'N/A' }}</div>
+                                    <div>{{ plan.premium || 'N/A' }}</div>
+                                </div>
+                            }
+                        </mat-radio-group>
+                    </div>
+
+                </mat-card>
+        </div>
+    </div>
+
+
+
+</form>

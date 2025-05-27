@@ -1,0 +1,29 @@
+.invalid-input {
+    border: solid 1px #E11F27;
+    color: #E11F27
+}
+
+.number-style-qty {
+    position: relative;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    -moz-column-gap: .5rem;
+    column-gap: .5rem;
+}
+.plan-table {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.plan-header,
+.plan-row {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1.5fr 1fr;
+    align-items: center;
+    padding: 10px 0;
+}
+.plan-header {
+    font-weight: bold;
+    border-bottom: 1px solid #ccc;
+}
