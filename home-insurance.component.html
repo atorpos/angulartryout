@@ -1,0 +1,49 @@
+@if (!isSubmit) {
+<form [formGroup]="homeSuranceForm">
+    <div id="home-Insurance-agent-number" >
+        <p class="text-[#555555] ml-auto mob:mt-2"><span i18n="@@homeSuranceAgentNumber">Agent number:</span> {{agentNo}}</p>
+    </div>
+
+    <mat-stepper linear #stepper (selectionChange)="onStepperClick($event)" [disableRipple]="true">
+        
+        <ng-template matStepperIcon="edit" let-index="index">
+            0{{index +1}}
+        </ng-template>
+
+        <mat-step state="first" label="Fast quotation" i18n-label="@@homeInsuranceFastQuotation" [completed]="this.fastQuotationComponent && this.fastQuotationComponent.isCompleted ">
+            <app-new-business-quotation [quotationData]="quotationData" />
+            <app-home-insurance-fast-quotation [homeSuranceForm]="homeSuranceForm" />
+
+            <div class="mt-4 grid gap-x-4 grid-cols-5 mob:mt-10">
+
+                <mat-form-field class="col-span-2 mob:col-span-5">
+                    <div class="relative w-full flex">
+                        <label class="mb-3 mob:mb-1" i18n="@@homeInsuranceExternalReferenceNumber">External reference
+                            no.</label>
+                        <img class="cursor-pointer opacity-50 hover:opacity-100 w-[18px] -mt-4 ml-1 mob:-mt-1"
+                            i18n-matTooltip matTooltip="The number will be shown on the policy schedule."
+                            matTooltipClass="w-max text-sm text-black left-1/2 z-10 bg-white rounded-lg px-2 py-1 shadow-lg translate-y-2 -translate-x-1/2 text-center"
+                            [matTooltipPosition]="'above'" src="assets/images/icons/tooltips.svg" />
+                    </div>
+                    <input class="block w-full text-lg mob:text-sm text-primary-purple bg-transparent pb-2 mob:pb-1"
+                        matInput formControlName="externalReferenceNo" maxlength="25"
+                        value="{{this.homeSuranceForm.controls['externalReferenceNo'].value}}"
+                        (keypress)="onExternalReferenceNumberKeyPress($event)" />
+                </mat-form-field>
+
+                <div></div>
+                <button mat-button class="mt-6 get-quote-button mob:col-span-2" type="button"
+                    (click)="onGetQuoteClick()" i18n="@@travelSuranceGetQuoteButton">Get quote
+                </button>
+                <button mat-button class="mt-6 buy-now-button mob:col-span-2" type="button" (click)="onBuyNowClick()"
+                    matStepperNext i18n="@@travelSuranceBuyNowButton">Buy now
+                </button>
+            </div>
+
+        </mat-step>
+        
+
+    </mat-stepper>
+
+</form>
+}
