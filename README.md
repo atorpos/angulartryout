@@ -1,5 +1,41 @@
 # angulartryout
 Try out of angular
+### update array:
+
+```
+plans =[
+    {
+      name: 'Silver Plan',
+      contents: '$500,000',
+      liability: '$5,000,000',
+      premium: '$1,430'
+    },
+    {
+      name: 'Gold Plan',
+      contents: '$750,000',
+      liability: '$8,000,000',
+      premium: '$1,090'
+    },
+    {
+      name: 'Platium Plan',
+      contents: '1,250,000',
+      liability: '10,000,000',
+      premium: 'null'
+    },
+  ];
+```
+
+```
+{
+    "Gold Plan": {
+        "premium": 2280
+    },
+    "Platinum Plan": {
+        "premium": 2600
+    }
+}
+```
+
 
 ###json format
 ```
