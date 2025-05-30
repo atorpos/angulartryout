@@ -1,6 +1,118 @@
 # angulartryout
 Try out of angular
 
+### Address Json
+````
+{
+    "RequestAddress": {
+        "AddressLine": [
+            "focal"
+        ]
+    },
+    "SuggestedAddress": [
+        {
+            "Address": {
+                "PremisesAddress": {
+                    "EngPremisesAddress": {
+                        "EngEstate": {
+                            "EstateName": "FOCAL INDUSTRIAL CENTRE"
+                        },
+                        "EngStreet": {
+                            "StreetName": "MAN LOK STREET",
+                            "BuildingNoFrom": "21"
+                        },
+                        "EngDistrict": {
+                            "DcDistrict": "KOWLOON CITY DISTRICT"
+                        },
+                        "Region": "KLN"
+                    },
+                    "GeoAddress": "3760119009P20050819",
+                    "GeospatialInformation": {
+                        "Northing": "819008",
+                        "Easting": "837598",
+                        "Latitude": "22.31004",
+                        "Longitude": "114.18978"
+                    }
+                }
+            },
+            "ValidationInformation": {
+                "Score": 75
+            }
+        },
+        {
+            "Address": {
+                "PremisesAddress": {
+                    "EngPremisesAddress": {
+                        "EngBlock": {
+                            "BlockDescriptor": "BLK",
+                            "BlockNo": "A",
+                            "BlockDescriptorPrecedenceIndicator": "Y"
+                        },
+                        "EngEstate": {
+                            "EstateName": "FOCAL INDUSTRIAL CENTRE"
+                        },
+                        "EngStreet": {
+                            "StreetName": "MAN LOK STREET",
+                            "BuildingNoFrom": "21"
+                        },
+                        "EngDistrict": {
+                            "DcDistrict": "KOWLOON CITY DISTRICT"
+                        },
+                        "Region": "KLN"
+                    },
+                    "GeoAddress": "3759719041T20050430",
+                    "GeospatialInformation": {
+                        "Northing": "819037",
+                        "Easting": "837599",
+                        "Latitude": "22.31031",
+                        "Longitude": "114.18979"
+                    }
+                }
+            },
+            "ValidationInformation": {
+                "Score": 75
+            }
+        },
+        {
+            "Address": {
+                "PremisesAddress": {
+                    "EngPremisesAddress": {
+                        "EngBlock": {
+                            "BlockDescriptor": "BLK",
+                            "BlockNo": "B",
+                            "BlockDescriptorPrecedenceIndicator": "Y"
+                        },
+                        "EngEstate": {
+                            "EstateName": "FOCAL INDUSTRIAL CENTRE"
+                        },
+                        "EngStreet": {
+                            "StreetName": "MAN LOK STREET",
+                            "BuildingNoFrom": "21"
+                        },
+                        "EngDistrict": {
+                            "DcDistrict": "KOWLOON CITY DISTRICT"
+                        },
+                        "Region": "KLN"
+                    },
+                    "GeoAddress": "3759618979T20050430",
+                    "GeospatialInformation": {
+                        "Northing": "818982",
+                        "Easting": "837598",
+                        "Latitude": "22.30981",
+                        "Longitude": "114.18978"
+                    }
+                }
+            },
+            "ValidationInformation": {
+                "Score": 75
+            }
+        }
+    ]
+}
+````
+
+###
+
 ### QandA
 
 ````
