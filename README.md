@@ -1,6 +1,12 @@
 # angulartryout
 Try out of angular
 
+### Address json:
+
+```
+{"RequestAddress":{"AddressLine":["Focal\n"]},"SuggestedAddress":[{"Address":{"PremisesAddress":{"EngPremisesAddress":{"EngEstate":{"EstateName":"FOCAL INDUSTRIAL CENTRE"},"EngStreet":{"StreetName":"MAN LOK STREET","BuildingNoFrom":"21"},"EngDistrict":{"DcDistrict":"KOWLOON CITY DISTRICT"},"Region":"KLN"},"ChiPremisesAddress":{"Region":"九龍","ChiDistrict":{"DcDistrict":"九龍城區"},"ChiStreet":{"StreetName":"民樂街","BuildingNoFrom":"21"},"ChiEstate":{"EstateName":"富高工業中心"}},"GeoAddress":"3760119009P20050819","GeospatialInformation":{"Northing":"819008","Easting":"837598","Latitude":"22.31004","Longitude":"114.18978"}}},"ValidationInformation":{"Score":75.00}},{"Address":{"PremisesAddress":{"EngPremisesAddress":{"EngBlock":{"BlockDescriptor":"BLK","BlockNo":"A","BlockDescriptorPrecedenceIndicator":"Y"},"EngEstate":{"EstateName":"FOCAL INDUSTRIAL CENTRE"},"EngStreet":{"StreetName":"MAN LOK STREET","BuildingNoFrom":"21"},"EngDistrict":{"DcDistrict":"KOWLOON CITY DISTRICT"},"Region":"KLN"},"ChiPremisesAddress":{"Region":"九龍","ChiDistrict":{"DcDistrict":"九龍城區"},"ChiStreet":{"StreetName":"民樂街","BuildingNoFrom":"21"},"ChiEstate":{"EstateName":"富高工業中心"},"ChiBlock":{"BlockDescriptor":"座","BlockNo":"A"}},"GeoAddress":"3759719041T20050430","GeospatialInformation":{"Northing":"819037","Easting":"837599","Latitude":"22.31031","Longitude":"114.18979"}}},"ValidationInformation":{"Score":75.00}},{"Address":{"PremisesAddress":{"EngPremisesAddress":{"EngBlock":{"BlockDescriptor":"BLK","BlockNo":"B","BlockDescriptorPrecedenceIndicator":"Y"},"EngEstate":{"EstateName":"FOCAL INDUSTRIAL CENTRE"},"EngStreet":{"StreetName":"MAN LOK STREET","BuildingNoFrom":"21"},"EngDistrict":{"DcDistrict":"KOWLOON CITY DISTRICT"},"Region":"KLN"},"ChiPremisesAddress":{"Region":"九龍","ChiDistrict":{"DcDistrict":"九龍城區"},"ChiStreet":{"StreetName":"民樂街","BuildingNoFrom":"21"},"ChiEstate":{"EstateName":"富高工業中心"},"ChiBlock":{"BlockDescriptor":"座","BlockNo":"B"}},"GeoAddress":"3759618979T20050430","GeospatialInformation":{"Northing":"818982","Easting":"837598","Latitude":"22.30981","Longitude":"114.18978"}}},"ValidationInformation":{"Score":75.00}}]}
+```
+
 ### Details json:
 
 ```
