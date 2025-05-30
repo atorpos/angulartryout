@@ -1,6 +1,12 @@
 # angulartryout
 Try out of angular
 
+###json format
+```
+[{"grossFloorAreaCode":"under500","saleableAreaCode":"under400","plans":{"Silver Plan":{"premium":780},"Gold Plan":{"premium":1240}}},{"grossFloorAreaCode":"501-700","saleableAreaCode":"401-560","plans":{"Silver Plan":{"premium":1080},"Gold Plan":{"premium":1370}}},{"grossFloorAreaCode":"701-1000","saleableAreaCode":"561-800","plans":{"Gold Plan":{"premium":1530},"Platinum Plan":{"premium":2340}}},{"grossFloorAreaCode":"1001-1500","saleableAreaCode":"801-1200","plans":{"Gold Plan":{"premium":2280},"Platinum Plan":{"premium":2600}}},{"grossFloorAreaCode":"1501-2000","saleableAreaCode":"1201-1600","plans":{"Platinum Plan":{"premium":2890}}},{"grossFloorAreaCode":"over2000","saleableAreaCode":"over1600","plans":{}}]
+```
+
+
 ##error
 ```
 ERROR TypeError: Cannot read properties of null (reading 'controls')
