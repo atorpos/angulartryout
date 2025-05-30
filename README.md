@@ -1,6 +1,16 @@
 # angulartryout
 Try out of angular
 
+### QandA
+
+````
+this.searchControl.get('searchControl')?.valueChanges.subscribe(
+      filter((value:string | null) => !!value && value.length > 3),
+      debounceTime(300),
+    );
+
+````
+
 ### Add value into others
 
 #### Put this on
