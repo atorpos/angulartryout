@@ -2,6 +2,27 @@
 Try out of angular
 
 ### transform
+````
+this.apiConService.getrealtimedata('100').subscribe(
+      response => {
+        this.tableResult = response;
+        this.saleableAreaRange = this.tableResult.map(plan =>plan.saleableAreaCode);
+        this.grossFloorAreaCode = this.tableResult.map(plan => plan.grossFloorAreaCode);
+      },
+      error => {
+        console.error('API Error: ', error);
+      }
+    );
+
+    this.apiConService.getreltimeDetaildata().subscribe(
+      respoonse =>{
+        this.planeDetailsResult = respoonse;
+        console.log(this.planeDetailsResult.map(Detailplant => Detailplant.plans));
+      }, error => {
+        console.error('Detail API error', error);
+      }
+    );
+````
 
 ````
 this.addressSearch.getAddress(val).subscribe(
