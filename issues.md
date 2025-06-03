@@ -1,6 +1,56 @@
 ## Issue:
 
 
+#### get values
+
+````
+{
+    "surname": "Chan",
+    "givenName": "Tai Man",
+    "gender": "Male",
+    "dateOfBirth": "1999-09-08T16:00:00.000Z",
+    "idType": "HKID",
+    "idNo": "K960670A",
+    "maritalStatus": "Single",
+    "countryCode": "852",
+    "mobileNo": "98776543",
+    "email": "example@gmail.com",
+    "correspondenceAddress": "Address",
+    "addressType": "Address",
+    "addressForm": {
+        "searchYourAddress": "BLK A, FOCAL INDUSTRIAL CENTRE, 21 MAN LOK STREET, Kowloon City District, KOWLOON",
+        "flatType": "Flat",
+        "flat": "13",
+        "floor": "43",
+        "blockType": "Block",
+        "block": "BLK A",
+        "building": "",
+        "estate": "FOCAL INDUSTRIAL CENTRE",
+        "estatePhase": "",
+        "street": "MAN LOK STREET",
+        "village": "",
+        "dd": null,
+        "lot": null,
+        "streetNo": "21",
+        "district": "Kowloon City District",
+        "subDistrict": null,
+        "displayDistrict": "Kowloon City District",
+        "area": "Kowloon"
+    },
+    "postOfficeBoxForm": {
+        "postOffice": "",
+        "poBoxNo": ""
+    },
+    "lineLength": null,
+    "maxNumberOfLines": null,
+    "unstructuredAddress": null
+}
+````
+```
+this.insuredInformationForm.controls['address'].setValue(this.proposerInformationForm.controls['AddressForm']);
+```
+
+
 #### result
 
 ````
