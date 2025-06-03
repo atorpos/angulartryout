@@ -1,5 +1,41 @@
 ## Issue:
 
+#### subscribe to updated
+
+````
+this.newBusinessService.getUnstructuredAddress(getUnstructuredAddressRequest).subscribe(
+                (result) => {
+                  this.personalProtectorForm.controls['proposerInformationForm'].get("lineLength")?.setValue(lineLength);
+                  this.personalProtectorForm.controls['proposerInformationForm'].get("maxNumberOfLines")?.setValue(maxNumberOfLines);
+                  this.personalProtectorForm.controls['proposerInformationForm'].get("unstructuredAddress")?.setValue(result.addressLines);
+
+                  this.personalProtectorForm.controls['insuredInformationForm'].controls['surname'].setValue(this.personalProtectorForm.controls['proposerInformationForm'].controls['surname'].value);
+                  this.personalProtectorForm.controls['insuredInformationForm'].controls['givenName'].setValue(this.personalProtectorForm.controls['proposerInformationForm'].controls['givenName'].value);
+                  this.personalProtectorForm.controls['insuredInformationForm'].controls['gender'].setValue(this.personalProtectorForm.controls['proposerInformationForm'].controls['gender'].value);
+                  this.personalProtectorForm.controls['insuredInformationForm'].controls['dateOfBirth'].setValue(this.personalProtectorForm.controls['proposerInformationForm'].controls['dateOfBirth'].value);
+                  this.personalProtectorForm.controls['insuredInformationForm'].controls['idType'].setValue(this.personalProtectorForm.controls['proposerInformationForm'].controls['idType'].value);
+                  this.personalProtectorForm.controls['insuredInformationForm'].controls['idNo'].setValue(this.personalProtectorForm.controls['proposerInformationForm'].controls['idNo'].value);
+                  this.insuredInformation.setIsView();
+                  stepper.next();
+
+                },
+                (error) => {
+                  this.messageDialogService.openMessageDialog({
+                    status: Status.Error,
+                    title: $localize`Error`,
+                    message: $localize`Fail to get unstructured address, please try again.`,
+                    actionButtonList: [
+                      {
+                        actionType: Status.Error,
+                        text: $localize`Close`
+                      }
+                    ]
+                  })
+                }
+              )
+````
+
+
 #### html code
 
 ````
