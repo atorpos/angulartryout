@@ -1,5 +1,22 @@
 ## Issue:
 
+### fast quoatation
+
+````
+{
+    "startDate": "2025-06-03T08:10:58.385Z",
+    "endDate": "2026-06-02T08:10:58.471Z",
+    "areaRange": null,
+    "rangeSelection": "2",
+    "selectedPlan": "Gold Plan",
+    "selectClass": "Saleable area",
+    "annualPremium": 1530,
+    "contentLimit": 750000,
+    "libilityLimit": 8000000,
+    "selectRange": "561-800"
+}
+````
+
 
 #### try this
 ````
