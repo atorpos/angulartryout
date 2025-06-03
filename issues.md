@@ -1,5 +1,13 @@
 ## Issue:
 
+
+#### try this
+````
+const selectedPlan = this.planeDetailsResult.map(detailPlan => detailPlan.plans)[this.fastQuotationForm.get('rangeSelection')?.value];
+const goldPremium = selectedPlan['Gold Plan'].premium;
+````
+
+
 #### get another value
 
 ````
