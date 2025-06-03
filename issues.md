@@ -1,6 +1,21 @@
 ## Issue:
 
+#### get another value
 
+````
+{
+    "Gold Plan": {
+        "premium": 2280
+    },
+    "Platinum Plan": {
+        "premium": 2600
+    }
+}
+````
+
+```
+this.planeDetailsResult.map(detailPlan => detailPlan.plans)[this.fastQuotationForm.get('rangeSelection')?.value]
+```
 #### get values
 
 ````
