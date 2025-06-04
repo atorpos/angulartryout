@@ -3,74 +3,7 @@
 #### old json
 
 ````
-{
-    "externalRefNo": "",
-    "agentNo": "17000047",
-    "startDate": "2025-06-04T08:00:06.146Z",
-    "endDate": "2026-06-03T08:00:06.240Z",
-    "jacketCode": "FAMCG10",
-    "planName": "Gold Plan",
-    "areaType": "Saleable Area",
-    "exactSaleableArea": 0,
-    "saleableAreaRangeCode": "801-1200",
-    "exactGrossFloorArea": 0,
-    "grossFloorAreaRangeCode": "801-1200",
-    "proposerInfo": {
-        "surname": "chan",
-        "givenName": "tai man",
-        "gender": "Male",
-        "maritalStatus": "Single",
-        "identityType": "HKID",
-        "identityNo": "k960670a",
-        "identityCheckDigit": "PASS",
-        "dateOfBirth": "1999-09-08T16:00:00.000Z",
-        "emailAddress": "dijfdjf@dfdf.com",
-        "mobileNumber": "98765456",
-        "correspondenceAddress": {
-            "lineLength": 30,
-            "maxNumberOfLines": 5,
-            "flat": "34",
-            "room": "34",
-            "shop": "34",
-            "unit": "34",
-            "suite": "3",
-            "flatOthers": "34",
-            "floor": "3",
-            "block": "BLK A",
-            "tower": "",
-            "house": "BLK A",
-            "blockOthers": "BLK A",
-            "building": "",
-            "estate": "FOCAL INDUSTRIAL CENTRE",
-            "phase": "",
-            "village": "",
-            "dd": "",
-            "lot": "",
-            "street": "MAN LOK STREET",
-            "streetNo": "21",
-            "district": "Kowloon City District",
-            "subDistrict": "",
-            "poBoxNumber": "",
-            "poBoxName": "",
-            "region": "Kowloon",
-            "country": "852",
-            "unstructuredAddress": [
-                "FLAT 34, 3/F, BLK A",
-                "FOCAL INDUSTRIAL CENTRE",
-                "21 MAN LOK STREET",
-                "KOWLOON CITY DISTRICT",
-                "KOWLOON."
-            ],
-            "default": true
-        },
-        "isDirectMarketingOptOut": false
-    },
-    "insuredInfo": {
-        "insuredPremisesAddressLine1": "FLAT 34, 3/F, BLK A, FOCAL INDUSTRIAL CENTRE, 21 MAN LOK STREET, KOWLOON CITY DISTRICT, KOWLOON.",
-        "insuredPremisesAddressLine2": "",
-        "insuredPremisesAddressLine3": ""
-    }
-}
+{"externalRefNo":"","agentNo":"12000035","startDate":"2025-06-04","endDate":"2026-06-03","planName":"Gold Plan","areaType":"Saleable Area","exactSaleableArea":null,"saleableAreaRangeCode":"801-1200","exactGrossFloorArea":null,"grossFloorAreaRangeCode":"","proposerInfo":{"surname":"wong","givenName":"fdffdd","gender":"Male","maritalStatus":"Single","identityType":"identityTypeId","identityNo":"K960670","identityCheckDigit":"A","passportNumber":"","dateOfBirth":"1999-09-09","emailAddress":"","mobileNumber":"","correspondenceAddress":{"addressType":"address","rawAddress":"","flatType":"Flat","floor":"3","blockType":"Block","dd":"","lot":"","estate":"FOCAL INDUSTRIAL CENTRE","street":"MAN LOK STREET","village":"","poBoxNumber":"","poBoxName":"","subDistrict":"","district":"Kowloon City District","adjustedAddress1":"FLAT 245, 3/F, BLK A","adjustedAddress2":"FOCAL INDUSTRIAL CENTRE","adjustedAddress3":"21 MAN LOK STREET","adjustedAddress4":"KOWLOON CITY DISTRICT","adjustedAddress5":"KOWLOON.","Flat":"245","Block":"BLK A","Building":"","Phase":"","Region":"Kowloon","StreetNo":"21","UnstructuredAddress":["FLAT 245, 3/F, BLK A","FOCAL INDUSTRIAL CENTRE","21 MAN LOK STREET","KOWLOON CITY DISTRICT","KOWLOON."],"Country":"Hong Kong"},"correspondenceAddressOneLine":"FLAT 245, 3/F, BLK A, FOCAL INDUSTRIAL CENTRE, 21 MAN LOK STREET, KOWLOON CITY DISTRICT, KOWLOON.","isDirectMarketingOptOut":false},"insuredInfo":{"insuredPremisesAddressLine1":"FLAT 245, 3/F, BLK A, FOCAL INDUSTRIAL CENTRE, 21 MAN LOK STREET","insuredPremisesAddressLine2":"KOWLOON CITY DISTRICT, KOWLOON.","insuredPremisesAddressLine3":""},"isVisited":true,"jacketCode":"FAMCG10"}
 ````
 
 #### today json
