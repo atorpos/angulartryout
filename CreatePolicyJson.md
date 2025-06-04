@@ -1,4 +1,40 @@
-## Create Policy JSON 
+## Create Policy JSON
+
+#### today json
+
+````
+{
+    "externalRefNo": "",
+    "agentNo": "17000047",
+    "startDate": "2025-06-04T03:09:15.383Z",
+    "endDate": "2026-06-03T03:09:15.548Z",
+    "jacketCode": "",
+    "planName": "Gold Plan",
+    "areaType": "Saleable Area",
+    "exactSaleableArea": 800,
+    "saleableAreaRangeCode": "561-800",
+    "exactGrossFloorArea": 800,
+    "grossFloorAreaRangeCode": "561-800",
+    "proposerInfo": {
+        "surname": "chan",
+        "givenName": "tai man",
+        "gender": "Male",
+        "maritalStatus": "Single",
+        "identityType": "HKID",
+        "identityNo": "K960670A",
+        "dateOfBirth": "1999-09-08T16:00:00.000Z",
+        "emailAddress": "daf@faf.com",
+        "mobileNumber": "98765467",
+        "isDirectMarketingOptOut": false
+    },
+    "insuredInfo": {
+        "insuredPremisesAddressLine1": "",
+        "insuredPremisesAddressLine2": "",
+        "insuredPremisesAddressLine3": ""
+    }
+}
+````
+
 #### Submitted json
 ````
 {
