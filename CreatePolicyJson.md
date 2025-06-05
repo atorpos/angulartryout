@@ -1,5 +1,19 @@
 ## Create Policy JSON
 
+#### another one
+
+````
+{
+    "agentNo": "17000047",
+    "startDate": "2025-06-05T03:10:42.162Z",
+    "areaType": "Saleable area",
+    "grossFloorAreaCode": "",
+    "saleableAreaCode": "801-1200",
+    "planName": ""
+}
+````
+
+
 #### old json
 
 ````
