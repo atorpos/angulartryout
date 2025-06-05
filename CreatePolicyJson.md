@@ -4,12 +4,72 @@
 
 ````
 {
-    "agentNo": "17000047",
-    "startDate": "2025-06-05T03:10:42.162Z",
-    "areaType": "Saleable area",
-    "grossFloorAreaCode": "",
-    "saleableAreaCode": "801-1200",
-    "planName": ""
+  "externalRefNo": "",
+  "agentNo": "17000047",
+  "startDate": "2025-06-05",
+  "endDate": "2026-06-04",
+  "jacketCode": "FAMCG10",
+  "planName": "Gold Plan",
+  "areaType": "Saleable Area",
+  "exactSaleableArea": 0,
+  "saleableAreaRangeCode": "3",
+  "exactGrossFloorArea": 0,
+  "grossFloorAreaRangeCode": "",
+  "proposerInfo": {
+    "surname": "chan",
+    "givenName": "tai man",
+    "gender": "Male",
+    "maritalStatus": "Single",
+    "identityType": "identityTypeId",
+    "identityNo": "k960670",
+    "identityCheckDigit": "A",
+    "dateOfBirth": "1999-09-08",
+    "emailAddress": "dfd@fdfd.com",
+    "mobileNumber": "98765434",
+    "correspondenceAddress": {
+      "lineLength": 30,
+      "maxNumberOfLines": 5,
+      "flat": "23",
+      "room": null,
+      "shop": null,
+      "unit": null,
+      "suite": null,
+      "flatOthers": null,
+      "floor": "4",
+      "block": "BLK A",
+      "tower": null,
+      "house": null,
+      "blockOthers": null,
+      "building": null,
+      "estate": "FOCAL INDUSTRIAL CENTRE",
+      "phase": null,
+      "village": null,
+      "dd": null,
+      "lot": null,
+      "street": "MAN LOK STREET",
+      "streetNo": "21",
+      "district": "Kowloon City District",
+      "subDistrict": null,
+      "poBoxNumber": null,
+      "poBoxName": null,
+      "region": "Kowloon",
+      "country": "Hong Kong",
+      "unstructuredAddress": [
+        "FLAT 23, 4/F, BLK A",
+        "FOCAL INDUSTRIAL CENTRE",
+        "21 MAN LOK STREET",
+        "KOWLOON CITY DISTRICT",
+        "KOWLOON."
+      ],
+      "default": true
+    },
+    "isDirectMarketingOptOut": true
+  },
+  "insuredInfo": {
+    "insuredPremisesAddressLine1": "FLAT 23, 4/F, BLK A, FOCAL INDUSTRIAL CENTRE, 21 MAN LOK STREET, KOWLOON CITY DISTRICT, KOWLOON.",
+    "insuredPremisesAddressLine2": "",
+    "insuredPremisesAddressLine3": ""
+  }
 }
 ````
 
