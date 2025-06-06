@@ -1,5 +1,20 @@
 ## Create Policy JSON
 
+### trail translation
+
+````
+conClass = [
+    {
+      name: 'Saleable area',
+      genName: 'Saleable area range (sq.ft.)',
+    },
+    {
+      name: 'Gross area',
+      genName: 'Gross floor area (sq.ft.)',
+    }
+  ];
+````
+
 #### json merge files
 
 ````
