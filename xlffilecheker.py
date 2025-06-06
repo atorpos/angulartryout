@@ -22,14 +22,14 @@ def compare_and_merge_xlf(source_path, target_path, output_path):
     added = 0
     for trans_id, unit in source_units.items():
         if trans_id not in target_units:
-            # Clone source <trans-unit>
+            
             new_unit = ET.Element("trans-unit", {"id": trans_id, "datatype": "html"})
             source = unit.find("source")
             if source is not None:
                 new_source = ET.SubElement(new_unit, "source")
                 new_source.text = source.text
-            # Add empty <target>
-            ET.SubElement(new_unit, "target").text = ""
+            # Add empty <target> - modify it. 
+            ET.SubElement(new_unit, "target").text = socure.target
             body.append(new_unit)
             added += 1
 
