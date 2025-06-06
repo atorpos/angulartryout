@@ -1,6 +1,17 @@
 ## Create Policy JSON
 
 ````
+<trans-unit id="conClass.saleableName">
+  <source>Saleable area</source>
+  <target>實用面積</target>
+</trans-unit>
+<trans-unit id="conClass.saleableGen">
+  <source>Saleable area range (sq.ft.)</source>
+  <target>實用面積範圍（平方呎）</target>
+</trans-unit>
+<!-- etc. -->
+
+
 conClass = [
   {
     name: $localize`:@@conClass.saleableName:Saleable area`,
