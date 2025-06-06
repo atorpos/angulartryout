@@ -1,5 +1,16 @@
 ## Create Policy JSON
+import { $localize } from '@angular/localize/init';
 
+conClass = [
+  {
+    name: $localize`:@@conClass.saleableName:Saleable area`,
+    genName: $localize`:@@conClass.saleableGen:Saleable area range (sq.ft.)`,
+  },
+  {
+    name: $localize`:@@conClass.grossName:Gross area`,
+    genName: $localize`:@@conClass.grossGen:Gross floor area (sq.ft.)`,
+  }
+];
 ### trail translation
 
 ````
