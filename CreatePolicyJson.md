@@ -10,8 +10,8 @@
   <target>實用面積範圍（平方呎）</target>
 </trans-unit>
 <!-- etc. -->
-
-
+````
+````
 conClass = [
   {
     name: $localize`:@@conClass.saleableName:Saleable area`,
