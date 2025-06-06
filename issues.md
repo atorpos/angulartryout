@@ -1,5 +1,24 @@
 ## Issue:
 
+### FIrst page
+
+````
+onErrorDialog(errDetails: string): void {
+    this.messageDialogService.openMessageDialog({
+      status: Status.Error,
+      title: $localize`Alert`,
+      message: $localize`{{errDetails}} data cannot retrieve.`,
+      actionButtonList: [
+        {
+          actionType: ActionType.Confirm,
+          text: $localize`Close`
+        }
+      ]
+    })
+    return
+  }
+````
+
 ### second page info
 
 ````
