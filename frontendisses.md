@@ -1,6 +1,28 @@
 ## Frontend
 
 ````
+<div class="w-full">
+                            <h6 class="block text-sm mb-1 w-full required">
+                                {{ constructionclass[0] }}
+                            </h6>
+                            <select
+                                class="w-full text-primary-purple text-lg pb-2 bg-[#F4F4F8] mob:text-sm mob:pb-1 border-b-2 border-[#B0ACC4]"
+                                formControlName="rangeSelection" required>
+                                <option value=""></option>
+                                @if (constructionclass[0] === 'Saleable area range(sq. ft.)') {
+                                @for (item of saleableAreaRange; track item) {
+                                <option value="{{$index}}">{{ item }}</option>
+                                }
+                                } @else if (constructionclass[0] === 'Gross floor area range(sq. ft.)') {
+                                @for (item of grossFloorAreaCode; track item) {
+                                <option value="{{$index}}">{{ item }}</option>
+                                }
+                                }
+                            </select>
+                        </div>
+````
+
+````
 <div class="Saleable-inputs grid grid-cols-1 tablet:grid-cols-1 lg:grid-cols-2 gap-4 w-full">
 
   <!-- Column 1: Saleable area -->
