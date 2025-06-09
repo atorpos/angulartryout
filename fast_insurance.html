@@ -1,0 +1,235 @@
+<form [formGroup]="fastQuotationForm" (submit)="onSubmit()">
+    <div class="bg-white rounted-xl p-6 mob: p-3">
+        <p class="text-[#555555] text-sm" i18n="@@homeInsurancePleaseCompleteinEnglish">
+            Please complete in English
+        </p>
+        <p class="text-[#555555] text-sm mb-8" i18n="@@homeInsuranceRequired">
+            *Required
+        </p>
+
+        <h4 i18n="@@homeInsuranceDetails"
+            class="inline-block text-3xl font-bold relative pb-4 after:absolute after:top-full after:left-0 after:w-1/2 after:w-[33px] after:h-[6px] after:bg-red mob:text-lg">
+            Insured premises</h4>
+        <div class="w-full pt-4">
+            <label class="w-full" i18n="@@HomeInsuranceTravelPeriod">Insured period</label>
+        </div>
+        <div class="grid grid-cols-2 mob:grid-cols-1 gap-x-8 gap-y-4 w-11/12 tablet:w-full my-0">
+            <!--Start date-->
+            <mat-form-field class="w-full md:block md:r-8">
+
+
+                <div class="relative inline-block w-full mob:mt-0">
+                    <label i18n="@@HomeInsuranceStartDate" class="mb-2 mob:mb-1 required">Start date</label>
+                </div>
+
+                <input class="flex-1 text-lg mob:text-sm text-primary-purple bg-transparent pb-2" matInput
+                    [matDatepicker]="startDateDatepicker" formControlName="startDate" placeholder="DD-MM-YYYY"
+                    [min]="minStartDate" (click)="startDateDatepicker.open()" (dateChange)="onStartDateChange()"
+                    required />
+                <mat-datepicker-toggle matIconSuffix [for]="startDateDatepicker" class="mat-mdc-icon-button">
+                    <mat-icon class="w-4 mt-6" matDatepickerToggleIcon>
+                        @if ((this.fastQuotationForm.controls['startDate'].hasError('required') ||
+                        this.fastQuotationForm.controls['startDate'].hasError('matDatepickerMin') ||
+                        this.fastQuotationForm.controls['startDate'].hasError('invalidDate')) &&
+                        this.fastQuotationForm.controls['startDate'].touched) {
+                        <img src="assets/images/icons/field_calendar_red.svg" />
+                        }
+                        @else {
+                        <img src="assets/images/icons/field_calendar.svg" alt="i" />
+                        }
+                    </mat-icon>
+                </mat-datepicker-toggle>
+                <mat-datepicker msig-datepicker #startDateDatepicker />
+                @if (this.fastQuotationForm.controls['startDate'].hasError('required') &&
+                this.fastQuotationForm.controls['startDate'].touched) {
+                <mat-error class="text-[#E11F27]" i18n="@@HomeInsuranceStartDateRequiredError">Please select or
+                    enter
+                    the start date.</mat-error>
+                }
+                @if (this.fastQuotationForm.controls['startDate'].hasError('matDatepickerMin') &&
+                this.fastQuotationForm.controls['startDate'].touched) {
+                <mat-error class="text-[#E11F27]" i18n="@@HomeInsuranceeExceedMinStartDateError">Invalid
+                    date</mat-error>
+                }
+                @if (this.fastQuotationForm.controls['startDate'].hasError('invalidDate') &&
+                this.fastQuotationForm.controls['startDate'].touched) {
+                <mat-error class="text-[#E11F27]" i18n="@@HomeInsuranceStartDateInvalidError">Invalid
+                    date</mat-error>
+                }
+            </mat-form-field>
+
+            <mat-form-field class="w-full md:block md:r-8">
+                <div class="relative inline-block w-full mob:mt-0">
+                    <label i18n="@@homeInsuranceEndDate" class="mb-2 mob:mb-1 required">End date</label>
+                </div>
+                <input class="flex-1 text-lg mob:text-sm text-primary-purple bg-transparent pb-2" matInput
+                    [matDatepicker]="endDateDatepicker" formControlName="endDate" placeholder="DD-MM-YYYY"
+                    [min]="minEndDate" (click)="endDateDatepicker.open()" (dateChange)="onEndDateChange()" required />
+                <mat-datepicker-toggle matIconSuffix [for]="endDateDatepicker" class="mat-mdc-icon-button ">
+                    <mat-icon matDatepickerToggleIcon>
+                        @if (this.fastQuotationForm.controls['endDate'].hasError('required') &&
+                        this.fastQuotationForm.controls['endDate'].touched) {
+                        <img src="assets/images/icons/field_calendar_red.svg" />
+                        }
+                        @else {
+                        <img src="assets/images/icons/field_calendar.svg" alt="i" />
+                        }
+                    </mat-icon>
+                </mat-datepicker-toggle>
+                <mat-datepicker msig-datepicker #endDateDatepicker />
+                @if (this.fastQuotationForm.controls['endDate'].hasError('required') &&
+                this.fastQuotationForm.controls['endDate'].touched) {
+                <mat-error class="text-[#E11F27]" i18n="@@HomeInsuranceEndDateRequiredError">Please select or enter the
+                    end date.</mat-error>
+                }
+            </mat-form-field>
+        </div>
+        <div>
+
+            <div class="flex relative w-full">
+                <label class="text-[14px] mb-3 required" i18n="@@HomeInsuranceConstructionClass">Construction Class
+                    I</label>
+                <span class="tooltips cursor-pointer group flex items-center relative">
+                    <img class="cursor-pointer opacity-50 hover:opacity-100 w-[18px] -mt-4 ml-1 mob:-mt-1"
+                        matTooltipClass="w-max text-sm text-black left-1/2 z-10 bg-white rounded-lg px-2 py-1 shadow-lg translate-y-2 -translate-x-1/2 text-center"
+                        src="assets/images/icons/tooltips.svg" />
+                    <div
+                        class="tooltips-content z-50 w-max min-w-content max-w-[240px] !text-primary-purple absolute left-1/2 bottom-full -translate-x-1/2 p-3 bg-white shadow-lg text-sm rounded-lg opacity-0 pointer-events-none group-hover:opacity-100 apply-transition">
+                        <div>
+                            <ul class="list-disc ps-5 text-red">
+                                <li>
+                                    <p class="text-black font-normal" i18n="@@HomeInsurancemaxyear">The age of the
+                                        building does not exceed 45
+                                        years</p>
+                                </li>
+                                <li>
+                                    <p class="text-black font-normal" i18n="@@HomeInsuranceCategorisLimit">The insured
+                                        premises are not categorised
+                                        as a village house, bungalow, duplex house, townhouse, detached or
+                                        similar</p>
+                                </li>
+                                <li>
+                                    <p class="text-black font-normal" i18n="@@HomeInsuranceStructLimit">The insured
+                                        premises are constructed of
+                                        and roofed with bricks, stones or concrete, and do not include
+                                        structural alternations made of glass, metal, plastic or similar
+                                        materials</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </span>
+            </div>
+
+            <div class="flex w-full">
+                <mat-radio-group formControlName="selectClass"
+                    class="flex gap-6 flex-wrap mb-3 tablet:flex-nowrap grap-6 mb-5">
+                    @for (typeArea of conClass; track typeArea.name) {
+                    <mat-radio-button [value]="typeArea.name"
+                        class="text-primary-purple flex items-center gap-2 inline-block">
+                        <p class="cursor-pointer mob:text-sm" i18n="@@HomeInsuranceTypeArea">
+                            {{ typeArea.genName }}
+                        </p>
+                    </mat-radio-button>
+                    }
+                </mat-radio-group>
+            </div>
+
+            <div class="col-span-2 mob:col-span-1">
+                <div class="rounded-2xl bg-[#F4F4F8] p-6">
+                    <div class="Saleable-inputs grid grid-cols-1 tablet:grid-cols-1 lg:grid-cols-2 gap-4 w-full">
+
+                        <!-- Column 1: Saleable area -->
+                        <div class="w-full">
+                            <h6 class="block text-sm mb-1 w-full required">
+                                {{ constructionclass[0] }}
+                            </h6>
+                            <select
+                                class="w-full text-primary-purple text-lg pb-2 bg-[#F4F4F8] mob:text-sm mob:pb-1 border-b-2 border-[#B0ACC4]"
+                                formControlName="rangeSelection" required>
+                                <option value=""></option>
+                                @if (constructionclass[0] === 'Saleable area range(sq. ft.)') {
+                                @for (item of saleableAreaRange; track item) {
+                                <option value="{{$index}}">{{ item }}</option>
+                                }
+                                } @else if (constructionclass[0] === 'Gross floor area range(sq. ft.)') {
+                                @for (item of grossFloorAreaCode; track item) {
+                                <option value="{{$index}}">{{ item }}</option>
+                                }
+                                }
+                            </select>
+                        </div>
+
+                        <!-- Column 2: Area input -->
+                        <div class="w-full">
+                            <h6 class="block text-sm mb-1">
+                                {{ constructionclass[1] }}
+                            </h6>
+                            <div class="input-container flex items-center gap-x-3 w-full border-b-2 border-[#B0ACC4]">
+                                <input type="number"
+                                    class="flex-1 text-lg mob:text-sm text-primary-purple bg-transparent pb-2" min="49"
+                                    max="99999" matInput formControlName="areaRange" (keypress)="numberOnly($event)" />
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="mat-mdc-form-field-subscript-wrapper mat-mdc-form-field-bottom-align"><!--container-->
+                <div class="mat-mdc-form-field-hint-wrapper"><!--container-->
+                    <div class="mat-mdc-form-field-hint-spacer"></div>
+                </div><!--container-->
+            </div>
+
+            <div class="col-span-2 mob:col-span-1">
+                <h4 i18n="@@HomeInsuranceLimitofIndemnity" class="text-[14px] mb-3 required">Limit of indemnity
+                </h4>
+            </div>
+
+            <div class="col-span-2 mob:col-span-1">
+                <div class="insured-table bg-[#F4F4F8] rounded-xl p-6 flex-1 mob:p-3 mt-4">
+                    <div class="grid grid-cols-4 gap-4 text-sm mob:text-xs font-bold">
+                        <div class="col-span-1">Plan</div>
+                        <div class="col-span-1 text-left" i18n="@@HomeInsuranceContent">Content (HKD)</div>
+                        <div class="col-span-1 text-left" i18n="@@HomeInsuranceLiability">Personal Liability (HKD)</div>
+                        <div class="col-span-1 text-left" i18n="@@HomeInsuranceAnnualP">Annual Premium (HKD)</div>
+                    </div>
+
+                    <mat-radio-group formControlName="selectedPlan" class="w-full block">
+                        @for (plan of plans; track plan.name) {
+                        <div class="grid grid-cols-4 gap-4 items-center mt-3 text-sm mob:text-xs">
+                            <div class="flex items-center gap-2 text-left">
+                                <mat-radio-button [value]="plan.name" [disabled]="!plan.premium || plan.premium === 0">
+                                    <div class="planfont">{{ plan.name }}</div>
+                                </mat-radio-button>
+                            </div>
+
+                            <div class="flex items-center text-left mt-3" style="color: #1b1464;">
+                                {{ plan.contents ? (plan.contents | currency:'':'symbol':'1.0-2') : 'N/A' }}
+                            </div>
+
+                            <div class="flex items-center text-left mt-3" style="color: #1b1464;">
+                                {{ plan.liability ? (plan.liability | currency:'':'symbol':'1.0-2') : 'N/A' }}
+                            </div>
+
+                            <div class="flex items-center text-left mt-3" style="color: #1b1464;">
+                                {{ plan.premium ? (plan.premium | currency:'':'symbol':'1.0-2') : 'N/A' }}
+                            </div>
+                        </div>
+                        }
+                    </mat-radio-group>
+                </div>
+            </div>
+
+            <a href="https://www.msig.com.hk/sites/msig_hk/files/H997%20Home%20Insurance%20brochure_May%202024_5.pdf"
+                target="_blank" class="group flex items-center gap-x-2 mt-4">
+                <img src="assets/images/icons/external.svg" alt="i" />
+                <p class="text-sm underline font-light group-hover:text-primary-purple"
+                    i18n="@@HomeInsuranceViewMoreProductDetails">View more product details</p>
+            </a>
+        </div>
+    </div>
+
+
+
+</form>
