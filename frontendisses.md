@@ -1,5 +1,6 @@
 ## Frontend
 
+````
 <div class="Saleable-inputs grid grid-cols-1 tablet:grid-cols-1 lg:grid-cols-2 gap-4 w-full">
 
   <!-- Column 1: Saleable area -->
@@ -44,7 +45,7 @@
   </div>
 
 </div>
-
+````
 
 ````
 <div class="Saleable-inputs grid grid-cols-2 mob:grid-cols-1 gap-4 tablet:w-full grid-cols-1">
