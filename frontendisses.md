@@ -1,5 +1,37 @@
 ## Frontend
 
+.form-group {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.875rem; /* equivalent to Tailwind's text-sm */
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+  width: 100%;
+}
+
+.custom-select {
+  width: 100%;
+  font-size: 1.125rem; /* equivalent to text-lg */
+  padding-bottom: 0.5rem;
+  background-color: #F4F4F8;
+  color: #5C2D91; /* example for primary-purple */
+  border: none;
+  border-bottom: 2px solid #B0ACC4;
+  outline: none;
+  appearance: none;
+}
+
+@media (max-width: 768px) {
+  .custom-select {
+    font-size: 0.875rem; /* text-sm on mobile */
+    padding-bottom: 0.25rem;
+  }
+}
+
 ````
 <div class="w-full">
                             <h6 class="block text-sm mb-1 w-full required">
