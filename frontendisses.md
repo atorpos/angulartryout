@@ -1,7 +1,26 @@
 ## Frontend
 
 ````
+<div class="form-group">
+  <h6 class="form-label">
+    {{ constructionclass[0] }}
+  </h6>
 
+  <select class="custom-select" formControlName="rangeSelection" required>
+    <option value=""></option>
+
+    @if (constructionclass[0] === 'Saleable area range(sq. ft.)') {
+      @for (item of saleableAreaRange; track item) {
+        <option value="{{$index}}">{{ item }}</option>
+      }
+    }
+    @else if (constructionclass[0] === 'Gross floor area range(sq. ft.)') {
+      @for (item of grossFloorAreaCode; track item) {
+        <option value="{{$index}}">{{ item }}</option>
+      }
+    }
+  </select>
+</div>
 
 ````
 
