@@ -1,5 +1,51 @@
 ## Frontend
 
+<div class="Saleable-inputs grid grid-cols-1 tablet:grid-cols-1 lg:grid-cols-2 gap-4 w-full">
+
+  <!-- Column 1: Saleable area -->
+  <div class="w-full">
+    <h6 class="block text-sm mb-1 w-full required">
+      {{ constructionclass[0] }}
+    </h6>
+    <select
+      class="w-full text-primary-purple text-lg pb-2 bg-[#F4F4F8] mob:text-sm mob:pb-1 border-b-2 border-[#B0ACC4]"
+      formControlName="rangeSelection"
+      required
+    >
+      <option value=""></option>
+      @if (constructionclass[0] === 'Saleable area range(sq. ft.)') {
+        @for (item of saleableAreaRange; track item) {
+          <option value="{{$index}}">{{ item }}</option>
+        }
+      } @else if (constructionclass[0] === 'Gross floor area range(sq. ft.)') {
+        @for (item of grossFloorAreaCode; track item) {
+          <option value="{{$index}}">{{ item }}</option>
+        }
+      }
+    </select>
+  </div>
+
+  <!-- Column 2: Area input -->
+  <div class="w-full">
+    <h6 class="block text-sm mb-1">
+      {{ constructionclass[1] }}
+    </h6>
+    <div class="input-container flex items-center gap-x-3 w-full border-b-2 border-[#B0ACC4]">
+      <input
+        type="number"
+        class="flex-1 text-lg mob:text-sm text-primary-purple bg-transparent pb-2"
+        min="49"
+        max="99999"
+        matInput
+        formControlName="areaRange"
+        (keypress)="numberOnly($event)"
+      />
+    </div>
+  </div>
+
+</div>
+
+
 ````
 <div class="Saleable-inputs grid grid-cols-2 mob:grid-cols-1 gap-4 tablet:w-full grid-cols-1">
                         <div class="relative inline-block w-full">
