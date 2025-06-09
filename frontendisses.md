@@ -1,5 +1,9 @@
 ## Frontend
 
+```
+<div class="Saleable-inputs grid grid-cols-2 mob:grid-cols-1 gap-4 tablet:w-full">
+```
+
 ````
 <div class="flex w-full">
   <mat-radio-group
