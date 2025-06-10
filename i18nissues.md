@@ -1,5 +1,21 @@
 #### i18n issues
 
+planTranslations = {
+  en: {
+    'Gold Plan': 'Gold Plan',
+    'Silver Plan': 'Silver Plan'
+  },
+  zh: {
+    'Gold Plan': '黃金計劃',
+    'Silver Plan': '白銀計劃'
+  }
+};
+
+getPlanName(plan: string): string {
+  const locale = $localize.locale || 'en'; // $localize.locale only works in Ivy, or use another locale resolver
+  return this.planTranslations[locale][plan] || plan;
+}
+
 ````
  <p class="text-lg" i18n="@@HomeInsuranceSelectPlanResult">
                         {{ fastQuotationForm.controls['selectedPlan'].value }}
