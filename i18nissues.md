@@ -1,5 +1,5 @@
 #### i18n issues
-
+````
 planTranslations = {
   en: {
     'Gold Plan': 'Gold Plan',
@@ -15,7 +15,7 @@ getPlanName(plan: string): string {
   const locale = $localize.locale || 'en'; // $localize.locale only works in Ivy, or use another locale resolver
   return this.planTranslations[locale][plan] || plan;
 }
-
+````
 ````
  <p class="text-lg" i18n="@@HomeInsuranceSelectPlanResult">
                         {{ fastQuotationForm.controls['selectedPlan'].value }}
