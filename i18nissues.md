@@ -1,8 +1,24 @@
 #### i18n issues
 
 ````
-Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ en: { 'Gold Plan': string; 'Silver Plan': string; 'Platinum Plan': string; }; zh: { 'Gold Plan': string; 'Silver Plan': string; 'Platinum Plan': string; }; }'.
-  No index signature with a parameter of type 'string' was found on type '{ en: { 'Gold Plan': string; 'Silver Plan': string; 'Platinum Plan': string; }; zh: { 'Gold Plan': string; 'Silver Plan': string; 'Platinum Plan': string; }; }'.
+const planTranslations: Record<string, Record<string, string>> = {
+  en: {
+    'Gold Plan': 'Gold Plan',
+    'Silver Plan': 'Silver Plan',
+    'Platinum Plan': 'Platinum Plan'
+  },
+  zh: {
+    'Gold Plan': '黃金計劃',
+    'Silver Plan': '白銀計劃',
+    'Platinum Plan': '白金計劃'
+  }
+};
+
+getPlanName(plan: string): string {
+  // Fallback to 'en' if locale not found
+  const locale = $localize?.locale || 'en';
+  return planTranslations[locale]?.[plan] || planTranslations['en'][plan] || plan;
+}
 ````
 ````
 planTranslations = {
