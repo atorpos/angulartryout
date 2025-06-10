@@ -1,4 +1,9 @@
 #### i18n issues
+
+````
+Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ en: { 'Gold Plan': string; 'Silver Plan': string; 'Platinum Plan': string; }; zh: { 'Gold Plan': string; 'Silver Plan': string; 'Platinum Plan': string; }; }'.
+  No index signature with a parameter of type 'string' was found on type '{ en: { 'Gold Plan': string; 'Silver Plan': string; 'Platinum Plan': string; }; zh: { 'Gold Plan': string; 'Silver Plan': string; 'Platinum Plan': string; }; }'.
+````
 ````
 planTranslations = {
   en: {
