@@ -1,5 +1,18 @@
 #### Macau Tryout
+import { AbstractControl, ValidationErrors, ValidatorFn } from '@angular/forms';
 
+function atLeastOneAddressFieldValidator(): ValidatorFn {
+  return (group: AbstractControl): ValidationErrors | null => {
+    const street = group.get('street')?.value?.trim();
+    const village = group.get('village')?.value?.trim();
+    const estate = group.get('estate')?.value?.trim();
+    const lot = group.get('lot')?.value?.trim();
+
+    const atLeastOneFilled = [street, village, estate, lot].some(val => !!val);
+
+    return atLeastOneFilled ? null : { atLeastOneAddressRequired: true };
+  };
+}
 ````
 addressForm: new FormGroup({
         searchYourAddress: new FormControl(),
