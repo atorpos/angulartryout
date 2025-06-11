@@ -1,6 +1,13 @@
 #### Macau Tryout
 
 ````
+@if
+                            (this.proposerInformationForm.controls['addressForm'].get('area')?.hasError('required')){
+                            <mat-error class="text-[#E11F27]" i18n="@@HomeInsuranceSelectArea">Please select the Area.</mat-error>
+                            }
+````
+
+````
 import { AbstractControl, ValidationErrors, ValidatorFn } from '@angular/forms';
 
 function atLeastOneAddressFieldValidator(): ValidatorFn {
