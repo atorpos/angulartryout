@@ -1,5 +1,9 @@
 #### Macau Tryout
 
+``
+Please fill in at least one of the information: Street / Village / Estate / Lot
+``
+
 ````
 {
   "externalRefNo": "",
