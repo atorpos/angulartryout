@@ -1,6 +1,34 @@
 #### Macau Tryout
 
 ````
+ <mat-form-field class="w-full md:block md:r-8">
+                <div class="relative inline-block w-full mob:mt-0">
+                    <label i18n="@@homeInsuranceEndDate" class="mb-2 mob:mb-1 required">End date</label>
+                </div>
+                <input class="flex-1 text-lg mob:text-sm text-primary-purple bg-transparent pb-2" matInput
+                    [matDatepicker]="endDateDatepicker" formControlName="endDate" placeholder="DD-MM-YYYY"
+                    [min]="minEndDate" (click)="endDateDatepicker.open()" (dateChange)="onEndDateChange()" required />
+                <mat-datepicker-toggle matIconSuffix [for]="endDateDatepicker" class="mat-mdc-icon-button ">
+                    <mat-icon matDatepickerToggleIcon>
+                        @if (this.fastQuotationForm.controls['endDate'].hasError('required') &&
+                        this.fastQuotationForm.controls['endDate'].touched) {
+                        <img src="assets/images/icons/field_calendar_red.svg" />
+                        }
+                        @else {
+                        <img src="assets/images/icons/field_calendar.svg" alt="i" />
+                        }
+                    </mat-icon>
+                </mat-datepicker-toggle>
+                <mat-datepicker msig-datepicker #endDateDatepicker />
+                @if (this.fastQuotationForm.controls['endDate'].hasError('required') &&
+                this.fastQuotationForm.controls['endDate'].touched) {
+                <mat-error class="text-[#E11F27]" i18n="@@HomeInsuranceEndDateRequiredError">Please select or enter the
+                    end date.</mat-error>
+                }
+            </mat-form-field>
+````
+
+````
 onSubmit(): void {
     this.proposerInformationForm.markAllAsTouched();
     var text_message = 'Invalid data, please try again.';
