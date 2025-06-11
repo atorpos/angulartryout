@@ -1,6 +1,31 @@
 #### Macau Tryout
 
 ````
+onSubmit(): void {
+    this.proposerInformationForm.markAllAsTouched();
+    var text_message = 'Invalid data, please try again.';
+    if (!this.isCompleted) {
+      if(this.proposerInformationForm.controls['addressForm'].errors?.['atLeastOneAddressRequired']) {
+        console.log('Successfully block');
+        text_message = 'Please fill in at least one of the information: Street / Village / Estate / Lot';
+      }
+      this.messageDialogService.openMessageDialog({
+        status: Status.Error,
+        title: $localize`Alert`,
+        message: text_message,
+        actionButtonList: [
+          {
+            actionType: ActionType.Confirm,
+            text: $localize`Close`
+          }
+        ]
+      });
+    }
+  }
+
+````
+
+````
 @if
                             (this.proposerInformationForm.controls['addressForm'].get('area')?.hasError('required')){
                             <mat-error class="text-[#E11F27]" i18n="@@HomeInsuranceSelectArea">Please select the Area.</mat-error>
