@@ -1,6 +1,12 @@
 # angulartryout
 Try out of angular
 
+### i18n naming
+
+````
+@@homeInsurance-macau-idNumber
+````
+
 ### transform
 ````
 this.apiConService.getrealtimedata('100').subscribe(
