@@ -1,5 +1,31 @@
 #### Macau Tryout
 
+````
+addressForm: new FormGroup({
+        searchYourAddress: new FormControl(),
+        flatType: new FormControl("Flat"),
+        flat: new FormControl(),
+        floor: new FormControl(),
+        blockType: new FormControl("Block"),
+        block: new FormControl(),
+        building: new FormControl(),
+        estate: new FormControl(),
+        estatePhase: new FormControl(),
+        street: new FormControl(),
+        village: new FormControl(),
+        dd: new FormControl(),
+        lot: new FormControl(),
+        streetNo: new FormControl(),
+
+
+        district: new FormControl(),
+        subDistrict: new FormControl(),
+        displayDistrict: new FormControl(),
+
+        area: new FormControl(),
+      }),
+````
+
 ``
 Please fill in at least one of the information: Street / Village / Estate / Lot
 ``
