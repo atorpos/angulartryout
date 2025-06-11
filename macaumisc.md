@@ -68,3 +68,73 @@
   "jacketCode": "HMMC07"
 }
 ````
+
+````
+{
+  "externalRefNo": "",
+  "agentNo": "19000008",
+  "startDate": "2025-06-11",
+  "endDate": "2026-06-10",
+  "jacketCode": "HMMC07",
+  "planName": "Plan A",
+  "areaType": "Gross Floor Area",
+  "exactSaleableArea": null,
+  "saleableAreaRangeCode": "",
+  "exactGrossFloorArea": null,
+  "grossFloorAreaRangeCode": "501-700",
+  "isVisited": true,
+  "proposerInfo": {
+    "surname": "chan",
+    "givenName": "tai man",
+    "gender": "Male",
+    "maritalStatus": "Single",
+    "identityType": "identityTypePassport",
+    "identityNo": "",
+    "identityCheckDigit": "",
+    "dateOfBirth": "1999-09-08",
+    "emailAddress": "",
+    "mobileNumber": "98765432",
+    "correspondenceAddress": {
+      "addressType": "address",
+      "lineLength": 30,
+      "maxNumberOfLines": 5,
+      "adjustedAddress1": "876 ANDAR, MACAU.",
+      "Flat": "",
+      "room": "",
+      "shop": "",
+      "unit": "",
+      "suite": "",
+      "flatOthers": "",
+      "floor": "876",
+      "Block": "",
+      "tower": "",
+      "house": "",
+      "blockOthers": "",
+      "Building": "",
+      "estate": "",
+      "Phase": "",
+      "village": "",
+      "dd": "",
+      "lot": "",
+      "street": "",
+      "StreetNo": "",
+      "district": "",
+      "subDistrict": "",
+      "poBoxNumber": "",
+      "poBoxName": "",
+      "Region": "Macau",
+      "Country": "Macau",
+      "UnstructuredAddress": [
+        "876 ANDAR, MACAU."
+      ],
+      "blockType": "Block",
+      "flatType": "Flat"
+    },
+    "isDirectMarketingOptOut": true,
+    "correspondenceAddressOneLine": "876 ANDAR, MACAU."
+  },
+  "insuredInfo": {
+    "insuredPremisesAddressLine1": "876 ANDAR 87654, MACAU."
+  }
+}
+````
