@@ -3,12 +3,21 @@ Try out of angular
 
 ### figure out regex not include Special char
 ````
-onExternalReferenceNumberKeyPress(input: KeyboardEvent): boolean {
-    if (!(input.key.match(/^[A-Za-z0-9^]*$/))) {
-      return false;
-    }
-    return true;
-  }
+<mat-form-field class="col-span-2 mob:col-span-5">
+          <div class="relative w-full flex">
+            <label class="mb-3 mob:mb-1" i18n="@@ExternalReference">External reference
+              no.</label>
+            <img class="cursor-pointer opacity-50 hover:opacity-100 w-[18px] -mt-4 ml-1 mob:-mt-1" i18n-matTooltip
+              matTooltip="The number will be shown on the policy schedule."
+              matTooltipClass="w-max text-sm text-black left-1/2 z-10 bg-white rounded-lg px-2 py-1 shadow-lg translate-y-2 -translate-x-1/2 text-center"
+              [matTooltipPosition]="'above'" src="assets/images/icons/tooltips.svg" />
+          </div>
+          <input class="block w-full text-lg mob:text-sm text-primary-purple bg-transparent pb-2 mob:pb-1" matInput
+            formControlName="externalReferenceNo" maxlength="25"
+            [value]="homeInsuranceForm.controls.externalReferenceNo.value"
+            (keypress)="onExternalReferenceNumberKeyPress($event)" />
+        </mat-form-field>
+
 
 ````
 
