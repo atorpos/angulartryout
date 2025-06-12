@@ -1,7 +1,7 @@
 #### the form functions
 
 ````
-{
+homeInsuranceForm = new FormGroup({
     externalReferenceNo: new FormControl(''),
 
     //FastQuotation - checker issue, can go above 150
