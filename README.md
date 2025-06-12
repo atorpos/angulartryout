@@ -1,6 +1,17 @@
 # angulartryout
 Try out of angular
 
+### figure out regex not include Special char
+````
+onExternalReferenceNumberKeyPress(input: KeyboardEvent): boolean {
+    if (!(input.key.match(/^[A-Za-z0-9^]*$/))) {
+      return false;
+    }
+    return true;
+  }
+
+````
+
 ````
  this.homeInsuranceForm.get('agentno')? | '';
 ````
