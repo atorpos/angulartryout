@@ -1,6 +1,10 @@
 # angulartryout
 Try out of angular
 
+````
+ this.homeInsuranceForm.get('agentno')? | '';
+````
+
 ### i18n naming
 
 ````
