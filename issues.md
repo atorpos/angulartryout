@@ -1,5 +1,14 @@
 ## Issue:
 
+### pull issues
+
+````
+this.fastQuotationForm.get('areaRange')?.valueChanges.subscribe(val => {
+      this.fastQuotationForm.get('rangeSelection')?.setValue(this.fastpagecal.getSizeRange(val, this.constructionclass[0])[0]);
+    });
+````
+
+
 ### FIrst page
 
 ````
