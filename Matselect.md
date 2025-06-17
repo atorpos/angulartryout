@@ -2,6 +2,10 @@ Here’s how to transform your select element to use Angular Material’s `mat-s
 
 ## HTML Template
 
+````
+core.mjs:6563 ERROR RuntimeError: NG01203: No value accessor for form control name: 'rangeSelection'.
+````
+
 ```html
 <mat-form-field class="w-full" appearance="outline">
   <mat-label>Select Range</mat-label>
