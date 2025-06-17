@@ -1,5 +1,75 @@
 Here’s how to transform your select element to use Angular Material’s `mat-select` and `mat-option`:
 
+
+not working
+
+````
+this.fastQuotationForm.get('rangeSelection')?.valueChanges.subscribe(value => {
+      this.fastQuotationForm.get('selectedPlan')?.setValue(null);
+      this.fastQuotationForm.get('selectRange')?.setValue(this.premiumTable.map(plan => plan.saleableAreaCode)[value]);
+      this.tableValues = this.premiumTable.map(plan => plan.plans)[value];
+      
+      var rangeValue: string = this.fastQuotationForm.get('selectRange')?.value;
+      if(/[a-zA-Z]/.test(rangeValue) && value == 0 && this.fastQuotationForm.get('areaRange')?.value > Number(rangeValue.replace(/\D/g, ''))) {
+          this.fastQuotationForm.get('areaRange')?.setValue('');
+      } 
+````
+
+````
+<div class="w-full form-group">
+                            <h6 class="block text-sm mb-1 w-full required">
+                                @if (constructionclass[0] === 'Saleable area range(sq. ft.)' && locale === 'zh') {
+                                    實用面積範圍（平方呎）
+                                } @else if (constructionclass[0] === 'Gross floor area range(sq. ft.)' && locale === 'zh') {
+                                    建築面積範圍（平方呎）
+                                } @else {
+                                    {{ constructionclass[0] }}
+                                }
+                                
+                            </h6>
+                                <mat-select class="block w-full text-lg border-b-2 border-[#B0ACC4] mob:text-sm text-primary-purple bg-transparent pb-2 mob:pb-1" matInput formControlName="rangeSelection" required
+                                    placeholder="Select range">
+                            
+                                    @if (constructionclass[0] === 'Saleable area range(sq. ft.)') {
+                                    @for (item of saleableAreaDescription; track $index) {
+                                    <mat-option [value]="$index">{{ item }}</mat-option>
+                                    }
+                                    } @else if (constructionclass[0] === 'Gross floor area range(sq. ft.)') {
+                                    @for (item of grossFloorAreDescription; track $index) {
+                                    <mat-option [value]="$index">{{ item }}</mat-option>
+                                    }
+                                    }
+                            
+                                </mat-select>
+                            
+                            @if (fastQuotationForm.controls['rangeSelection'].hasError('required') &&
+                                fastQuotationForm.controls['rangeSelection'].touched) {
+                                <div class="w-full border-t-2 border-[#e11F27] pt-2">
+                                    <mat-error class="text-[#E11F27] text-sm" i18n="@@homeInsurance-hk-RangeRequiredError">Please select a range.</mat-error>
+                                </div>
+                                }
+                        </div>
+
+                        <!-- Column 2: Area input -->
+                        <div class="w-full">
+                            <h6 class="block text-sm mb-1">
+                                @if (constructionclass[1] === 'Exact saleable area(sq.ft.)' && locale === 'zh') {
+                                    確實實用面積（平方呎）
+                                } @else if (constructionclass[1] === 'Exact gross floor area (sq. ft)' && locale === 'zh') {
+                                    確實建築面積（平方呎）
+                                } @else {
+                                    {{ constructionclass[1] }}
+                                }
+                                
+                            </h6>
+                            <div class="input-container flex items-center gap-x-3 w-full border-b-2 border-[#B0ACC4] mob:text-sm text-primary-purple bg-transparent pb-1">
+                                <input type="number"
+                                    class="flex-1 text-lg mob:text-sm text-primary-purple bg-transparent pb-2" min="49"
+                                    max="99999" matInput formControlName="areaRange" (keypress)="numberOnly($event)" />
+                            </div>
+                        </div>
+````
+
 ## HTML Template
 
 ````
