@@ -8,3 +8,7 @@ if(this.homeInsuranceForm.controls['proposerInformationForm'].controls['correspo
                     this.homeInsuranceForm.controls['proposerInformationForm'].controls['unstructuredAddress'].value.join(', '));
 
 ````
+
+````
+maxValue = this.limitOfIndemnityTable[value].saleableAreaUpperBound;
+````
