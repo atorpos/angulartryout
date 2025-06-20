@@ -1,19 +1,29 @@
 #### transform to model
 
 ````
-this.landlordProtectorService.getPremiumTable(this.agentNo).subscribe({
-      next: (response) => {
-        console.log(this.premiumTable);
-        // this.saleableAreaRange = this.premiumTable.map(plan => plan.saleableAreaCode);
-        // this.grossFloorAreaCode = this.premiumTable.map(plan => plan.grossFloorAreaCode);
-      },
-      error: (error) => {
-        console.error('API Error: ', error);
-        this.onErrorDialog("Priemum")
-      }
+export enum FLoorAreaType {
+    grossFloorArea = 'Gross Floor Area',
+    saleableArea = 'Saleable Area'
+}
 
-    }
-    );
+export interface premiumDetails {
+    planName: detailPlan[];
+}
+
+export interface detailPlan {
+    floorAreaType: FLoorAreaType;
+    minimumFloorAreaSquareFeet: number;
+    maximumFloorAreaSquareFeet: number | null;
+    annualPremium: number;
+    annualFirePremium: number;
+    AreaDescription: createDropdown(minimumFloorAreaSquareFeet, maximumFloorAreaSquareFeet);
+    annualPersonalPublicLiabilityPremium: number;
+}
+
+export interface createDropdown(minValue: number, maxValue?: number): string {
+
+    return "123";
+}
 ````
 
 ````
