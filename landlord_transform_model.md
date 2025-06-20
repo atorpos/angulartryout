@@ -1,6 +1,10 @@
 #### transform to model
 
 ````
+{"externalRefNo":"","agentNo":"19000008","startDate":"2025-06-20","endDate":"2026-06-19","floorAreaType":"Gross Floor Area","exactSaleableArea":null,"saleableAreaRange":"","exactGrossFloorArea":null,"grossFloorAreaRange":"1,001 - 1,200","proposerInfo":{"surname":"chan","givenName":"taiman","gender":"","maritalStatus":"","identityType":"identityTypeId","identityNo":"1234567","identityCheckDigit":"9","passportNumber":"","dateOfBirth":"1999-09-09","emailAddress":"","mobileNumber":"","correspondenceAddress":{"addressType":"address","rawAddress":"","flatType":"Flat","floor":"","blockType":"Block","dd":"","lot":"","estate":"fddfdfd","street":"","village":"","poBoxNumber":"","poBoxName":"","subDistrict":"","district":"Macau","adjustedAddress1":"FDDFDFD, FDFFDF, MACAU.","adjustedAddress2":"","adjustedAddress3":"","adjustedAddress4":"","adjustedAddress5":"","Flat":"","Block":"","Building":"fdffdf","Phase":"","Region":"","StreetNo":"","UnstructuredAddress":["FDDFDFD, FDFFDF, MACAU."],"Country":"Macau"},"correspondenceAddressOneLine":"FDDFDFD, FDFFDF, MACAU.","isDirectMarketingOptOut":true},"insuredInfo":{"insuredPremisesAddressLine1":"FDDFDFD, FDFFDF, MACAU.","insuredPremisesAddressLine2":"","insuredPremisesAddressLine3":""},"isVisited":true,"minimumFloorAreaSquareFeet":1001,"maximumFloorAreaSquareFeet":1200}
+````
+
+````
 {
     "premiumDetails": [
         {
