@@ -1,30 +1,37 @@
 #### transform to model
 
 ````
-export enum FLoorAreaType {
-    grossFloorArea = 'Gross Floor Area',
-    saleableArea = 'Saleable Area'
-}
-
-export interface premiumDetails {
-    planName: detailPlan[];
-}
-
-export interface detailPlan {
-    floorAreaType: FLoorAreaType;
-    minimumFloorAreaSquareFeet: number;
-    maximumFloorAreaSquareFeet: number | null;
-    annualPremium: number;
-    annualFirePremium: number;
-    AreaDescription: createDropdown(minimumFloorAreaSquareFeet, maximumFloorAreaSquareFeet);
-    annualPersonalPublicLiabilityPremium: number;
-}
-
-export interface createDropdown(minValue: number, maxValue?: number): string {
-
-    return "123";
-}
+plan = {
+      contents: 0,
+      liability: 0,
+      premium: 0
+    };
 ````
+
+````
+this.fastQuotationForm.get('rangeSelection')?.valueChanges.subscribe(value => {
+      console.log(this.limitOfIndemnityTable[value]);
+      console.log(this.premiumTable[value].annualPremium);
+       
+      // this.fastQuotationForm.get('selectRange')?.setValue(this.premiumTable.map(plan => plan.grossFloorAreaCode)[val]);
+      // this.tableValues = this.premiumTable.map(plan => plan.plans)[val];
+      // this.plans.forEach(plan => {
+      //   const tableUpdate = this.tableValues[plan.name];
+      //   const contentsUpdate = this.limitOfIndemnityTable[val]['plans'][plan.name];
+      //   if (tableUpdate && tableUpdate.premium !== undefined && tableUpdate.premium !== null) {
+      //     plan.premium = tableUpdate.premium;
+      //     plan.contents = contentsUpdate.limitOfIndemnityContents;
+      //     plan.liability = contentsUpdate.limitOfIndemnityPersonalLiability;
+      //   } else {
+      //     plan.premium = 0;
+      //     plan.contents = 0;
+      //     plan.liability = 0;
+      //   }
+      // });
+    });
+````
+
+
 
 ````
 {
