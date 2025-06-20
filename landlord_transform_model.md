@@ -1,18 +1,19 @@
 #### transform to model
 
 ````
-this.landlordProtectorService.getLimitOfIndemnityTable(this.agentNo).subscribe({
+this.landlordProtectorService.getPremiumTable(this.agentNo).subscribe({
       next: (response) => {
-        this.limitOfIndemnityTable = response;
-        console.log(this.limitOfIndemnityTable);
-        // this.grossFloorAreDescription = this.limitOfIndemnityTable.map(item => item.grossFloorAreaDescription);
+        console.log(this.premiumTable);
+        // this.saleableAreaRange = this.premiumTable.map(plan => plan.saleableAreaCode);
+        // this.grossFloorAreaCode = this.premiumTable.map(plan => plan.grossFloorAreaCode);
       },
       error: (error) => {
-        console.error('Detail API error ', error);
-        this.onErrorDialog("Real Time");
+        console.error('API Error: ', error);
+        this.onErrorDialog("Priemum")
       }
 
-    });
+    }
+    );
 ````
 
 ````
