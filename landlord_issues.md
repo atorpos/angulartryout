@@ -1,4 +1,11 @@
 ##landlord issues
+
+````
+<mat-checkbox class="text-red-600 w-4" type="checkbox" id="isSameAsProposerCorresspondenceAddress"
+                     formControlName="isSameAsProposerCorresspondenceAddress"
+                     (change)="handleCheckBoxClick()" aria-invalid="false" style="accent-color: #1B1464 !important;" />
+````
+
 ````
 <input type="number"
                                     class="flex-1 text-lg border-b-2 border-[#B0ACC4] mob:text-sm text-primary-purple bg-transparent pb-2" min="1"
