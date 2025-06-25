@@ -1,4 +1,10 @@
 ##landlord issues
+````
+<input type="number"
+                                    class="flex-1 text-lg border-b-2 border-[#B0ACC4] mob:text-sm text-primary-purple bg-transparent pb-2" min="1"
+                                    max="99999" matInput formControlName="areaRange" (keypress)="numberOnly($event)" style="height: 34px;" />
+````
+
 
 ````
 async functionwaitForVariable() {
