@@ -1,17 +1,28 @@
 ##landlord issues
 
 ````
- getSizeRange2(exactSize: number, combineDataTable: FastquoteDataResult[]): number {
-        let i =0;
-        for(i; i < combineDataTable.length; i++){
-            if(combineDataTable[i].maximumFloorAreaSquareFeet == null && exactSize > combineDataTable[i].minimumFloorAreaSquareFeet){
-                return i;
-            } else if(combineDataTable[i].maximumFloorAreaSquareFeet !=null && exactSize <= combineDataTable[i].maximumFloorAreaSquareFeet && exactSize > combineDataTable[i].minimumFloorAreaSquareFeet) {
-                return i;
-            }
-        }
-        return i;
+async functionwaitForVariable() {
+
+    while (this.agentNo === undefined || this.agentNo === '' || this.agentNo === null) {
+      await new Promise(resolve => setTimeout(resolve, 100));
     }
+
+    try {
+      const [premiumResponse, limitResponse ] = await Promise.all([
+          this.landlordProtectorService.getPremiumTable(this.agentNo).toPromise(),
+          this.landlordProtectorService.getLimitOfIndemnityTable(this.agentNo).toPromise()
+      ]);
+
+      this.combineDataTable = FastquoteDataMapper.mergedata(limitResponse.limitOfIndemnityDetails.filter(
+          (item: { floorAreaType: string; }) => item.floorAreaType === "Gross Floor Area"
+      ),premiumResponse.premiumDetails.filter(
+          (item: { floorAreaType: string; }) => item.floorAreaType === "Gross Floor Area"
+      ));
+
+    }catch(error) {
+      this.onErrorDialog('Data loading failed' + error);
+    }
+  }
 ````
 
 ```
