@@ -1,5 +1,22 @@
 ##landlord issues
 
+```scss
+.custom-checkbox {
+  ::ng-deep .mdc-checkbox__background {
+    border-color: #1B1464 !important;
+  }
+  
+  ::ng-deep .mdc-checkbox--checked .mdc-checkbox__background {
+    background-color: #1B1464 !important;
+    border-color: #1B1464 !important;
+  }
+  
+  ::ng-deep .mdc-checkbox__checkmark-path {
+    stroke: white !important;
+  }
+}
+```
+
 ```css
 .custom-checkbox {
   --mdc-checkbox-selected-checkmark-color: white;
