@@ -1,5 +1,15 @@
 ##landlord issues
 
+```css
+.custom-checkbox {
+  --mdc-checkbox-selected-checkmark-color: white;
+  --mdc-checkbox-selected-container-color: #1B1464;
+  --mdc-checkbox-selected-focus-container-color: #1B1464;
+  --mdc-checkbox-selected-hover-container-color: #1B1464;
+  --mdc-checkbox-selected-pressed-container-color: #1B1464;
+}
+```
+
 ````
 <mat-checkbox class="text-red-600 w-4" type="checkbox" id="isSameAsProposerCorresspondenceAddress"
                      formControlName="isSameAsProposerCorresspondenceAddress"
