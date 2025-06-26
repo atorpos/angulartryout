@@ -1,5 +1,135 @@
 ### issues
 
+
+// Insurance Plan Data Model
+
+interface InsurancePlan {
+limitOfIndemnityContents: number;
+limitOfIndemnityPersonalLiability: number;
+}
+
+interface InsurancePlans {
+“Silver Plan”: InsurancePlan;
+“Gold Plan”: InsurancePlan;
+“Platinum Plan”: InsurancePlan;
+}
+
+interface PropertySizeCategory {
+// Gross Floor Area Properties
+grossFloorAreaCode: string;
+grossFloorAreaDescription: string;
+grossFloorAreaLowerBound: number;
+grossFloorAreaUpperBound: number | null; // null for unbounded upper ranges
+
+// Saleable Area Properties
+saleableAreaCode: string;
+saleableAreaDescription: string;
+saleableAreaLowerBound: number;
+saleableAreaUpperBound: number | null; // null for unbounded upper ranges
+
+// Available insurance plans for this property size
+plans: InsurancePlans;
+}
+
+// Main data structure
+type InsurancePlanData = PropertySizeCategory[];
+
+// Example usage and helper functions
+class InsurancePlanService {
+constructor(private data: InsurancePlanData) {}
+
+// Find appropriate category based on gross floor area
+findCategoryByGrossFloorArea(area: number): PropertySizeCategory | null {
+return this.data.find(category => {
+const withinLowerBound = area >= category.grossFloorAreaLowerBound;
+const withinUpperBound = category.grossFloorAreaUpperBound === null ||
+area <= category.grossFloorAreaUpperBound;
+return withinLowerBound && withinUpperBound;
+}) || null;
+}
+
+// Find appropriate category based on saleable area
+findCategoryBySaleableArea(area: number): PropertySizeCategory | null {
+return this.data.find(category => {
+const withinLowerBound = area >= category.saleableAreaLowerBound;
+const withinUpperBound = category.saleableAreaUpperBound === null ||
+area <= category.saleableAreaUpperBound;
+return withinLowerBound && withinUpperBound;
+}) || null;
+}
+
+// Get all available plan types
+getAvailablePlanTypes(): string[] {
+return [“Silver Plan”, “Gold Plan”, “Platinum Plan”];
+}
+
+// Get plan details for a specific property size and plan type
+getPlanDetails(area: number, planType: keyof InsurancePlans, areaType: ‘gross’ | ‘saleable’ = ‘gross’): InsurancePlan | null {
+const category = areaType === ‘gross’
+? this.findCategoryByGrossFloorArea(area)
+: this.findCategoryBySaleableArea(area);
+
+```
+return category ? category.plans[planType] : null;
+```
+
+}
+
+// Get all plans for a specific property size
+getAllPlansForProperty(area: number, areaType: ‘gross’ | ‘saleable’ = ‘gross’): InsurancePlans | null {
+const category = areaType === ‘gross’
+? this.findCategoryByGrossFloorArea(area)
+: this.findCategoryBySaleableArea(area);
+
+```
+return category ? category.plans : null;
+```
+
+}
+}
+
+// Validation functions
+function validatePropertySizeCategory(category: PropertySizeCategory): boolean {
+// Check if bounds are logical
+if (category.grossFloorAreaUpperBound !== null &&
+category.grossFloorAreaLowerBound > category.grossFloorAreaUpperBound) {
+return false;
+}
+
+if (category.saleableAreaUpperBound !== null &&
+category.saleableAreaLowerBound > category.saleableAreaUpperBound) {
+return false;
+}
+
+// Check if all required plans exist
+const requiredPlans = [“Silver Plan”, “Gold Plan”, “Platinum Plan”];
+return requiredPlans.every(plan => plan in category.plans);
+}
+
+function validateInsurancePlan(plan: InsurancePlan): boolean {
+return plan.limitOfIndemnityContents > 0 &&
+plan.limitOfIndemnityPersonalLiability > 0;
+}
+
+// Constants for plan types (for better type safety)
+export const PLAN_TYPES = {
+SILVER: “Silver Plan” as const,
+GOLD: “Gold Plan” as const,
+PLATINUM: “Platinum Plan” as const
+} as const;
+
+export type PlanType = typeof PLAN_TYPES[keyof typeof PLAN_TYPES];
+
+// Export types and classes
+export {
+InsurancePlan,
+InsurancePlans,
+PropertySizeCategory,
+InsurancePlanData,
+InsurancePlanService,
+validatePropertySizeCategory,
+validateInsurancePlan
+};
 ````
 [
     {
