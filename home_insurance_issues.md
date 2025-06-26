@@ -1,6 +1,163 @@
 ### issues
 
 ````
+[
+    {
+        "plans": {
+            "Gold Plan": {
+                "limitOfIndemnityContents": 750000,
+                "limitOfIndemnityPersonalLiability": 8000000,
+                "premium": 1240
+            },
+            "Silver Plan": {
+                "limitOfIndemnityContents": 500000,
+                "limitOfIndemnityPersonalLiability": 5000000,
+                "premium": 780
+            }
+        },
+        "areaType": {
+            "grossFloorArea": {
+                "areaCode": "under500",
+                "areaDescription": "≤ 500",
+                "areaLowerBound": 1,
+                "areaUpperBound": 500
+            },
+            "saleableArea": {
+                "areaCode": "under400",
+                "areaDescription": "≤ 400",
+                "areaLowerBound": 1,
+                "areaUpperBound": 400
+            }
+        }
+    },
+    {
+        "plans": {
+            "Gold Plan": {
+                "limitOfIndemnityContents": 750000,
+                "limitOfIndemnityPersonalLiability": 8000000,
+                "premium": 1370
+            },
+            "Silver Plan": {
+                "limitOfIndemnityContents": 500000,
+                "limitOfIndemnityPersonalLiability": 5000000,
+                "premium": 1080
+            }
+        },
+        "areaType": {
+            "grossFloorArea": {
+                "areaCode": "501-700",
+                "areaDescription": "501 - 700",
+                "areaLowerBound": 501,
+                "areaUpperBound": 700
+            },
+            "saleableArea": {
+                "areaCode": "401-560",
+                "areaDescription": "401 - 560",
+                "areaLowerBound": 401,
+                "areaUpperBound": 560
+            }
+        }
+    },
+    {
+        "plans": {
+            "Gold Plan": {
+                "limitOfIndemnityContents": 750000,
+                "limitOfIndemnityPersonalLiability": 8000000,
+                "premium": 1530
+            },
+            "Platinum Plan": {
+                "limitOfIndemnityContents": 1250000,
+                "limitOfIndemnityPersonalLiability": 10000000,
+                "premium": 2340
+            }
+        },
+        "areaType": {
+            "grossFloorArea": {
+                "areaCode": "701-1000",
+                "areaDescription": "701 - 1,000",
+                "areaLowerBound": 701,
+                "areaUpperBound": 1000
+            },
+            "saleableArea": {
+                "areaCode": "561-800",
+                "areaDescription": "561 - 800",
+                "areaLowerBound": 561,
+                "areaUpperBound": 800
+            }
+        }
+    },
+    {
+        "plans": {
+            "Gold Plan": {
+                "limitOfIndemnityContents": 750000,
+                "limitOfIndemnityPersonalLiability": 8000000,
+                "premium": 2280
+            },
+            "Platinum Plan": {
+                "limitOfIndemnityContents": 1250000,
+                "limitOfIndemnityPersonalLiability": 10000000,
+                "premium": 2600
+            }
+        },
+        "areaType": {
+            "grossFloorArea": {
+                "areaCode": "1001-1500",
+                "areaDescription": "1,001 - 1,500",
+                "areaLowerBound": 1001,
+                "areaUpperBound": 1500
+            },
+            "saleableArea": {
+                "areaCode": "801-1200",
+                "areaDescription": "801 - 1,200",
+                "areaLowerBound": 801,
+                "areaUpperBound": 1200
+            }
+        }
+    },
+    {
+        "plans": {
+            "Platinum Plan": {
+                "limitOfIndemnityContents": 1250000,
+                "limitOfIndemnityPersonalLiability": 10000000,
+                "premium": 2890
+            }
+        },
+        "areaType": {
+            "grossFloorArea": {
+                "areaCode": "1501-2000",
+                "areaDescription": "1,501 - 2,000",
+                "areaLowerBound": 1501,
+                "areaUpperBound": 2000
+            },
+            "saleableArea": {
+                "areaCode": "1201-1600",
+                "areaDescription": "1,201 - 1,600",
+                "areaLowerBound": 1201,
+                "areaUpperBound": 1600
+            }
+        }
+    },
+    {
+        "plans": {},
+        "areaType": {
+            "grossFloorArea": {
+                "areaCode": "over2000",
+                "areaDescription": "> 2,000",
+                "areaLowerBound": 2001,
+                "areaUpperBound": null
+            },
+            "saleableArea": {
+                "areaCode": "over1600",
+                "areaDescription": "> 1,600",
+                "areaLowerBound": 1601,
+                "areaUpperBound": null
+            }
+        }
+    }
+]
+````
+
+````
 // Insurance Plan Data Model
 
 interface InsurancePlan {
