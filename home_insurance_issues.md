@@ -1,6 +1,35 @@
 ### issues
 
 ````
+ static getSizeRange(exactSize: number, combineDataTable: MergePlan[], areaType: string): number {
+        let i = 0;
+        
+
+        for(i; i < combineDataTable.length; i++){
+            if(areaType == 'Saleable area (sq. ft.)') {
+                console.log(exactSize, combineDataTable, areaType, combineDataTable[i].areaType['saleableArea'].areaUpperBound, combineDataTable[i].areaType['saleableArea'].areaLowerBound);
+                if (combineDataTable[i].areaType['saleableArea'].areaUpperBound == null && exactSize > combineDataTable[i].areaType['saleableArea'].areaLowerBound) {
+                    return i;
+                } else if (exactSize >= combineDataTable[i].areaType['saleableArea'].areaLowerBound! && exactSize <= combineDataTable[i].areaType['saleableArea'].areaLowerBound!) {
+                    return i;
+                }
+            }
+            if(areaType == 'Gross floor area (sq. ft.)') {
+                console.log('grossable ' + i);
+                if (combineDataTable[i].areaType['grossFloorArea'].areaUpperBound == null && exactSize > combineDataTable[i].areaType['grossFloorArea'].areaLowerBound) {
+                    return i;
+                } else if (exactSize <= combineDataTable[i].areaType['grossFloorArea'].areaLowerBound! && exactSize >= combineDataTable[i].areaType['grossFloorArea'].areaLowerBound!) {
+                    return i;
+                }
+            }
+        }
+        return i;
+
+    }
+
+````
+
+````
 [
     {
         "plans": {
