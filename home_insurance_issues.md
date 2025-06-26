@@ -1,5 +1,86 @@
 ### issues
 
+Looking at your code, I can see several issues that are preventing the loop from working correctly:
+
+## Main Issues:
+
+### 1. **Incorrect condition in the saleable area check:**
+
+```typescript
+// Current (WRONG):
+exactSize <= combineDataTable[i].areaType['saleableArea'].areaLowerBound!
+
+// Should be:
+exactSize <= combineDataTable[i].areaType['saleableArea'].areaUpperBound!
+```
+
+### 2. **Incorrect condition in the gross floor area check:**
+
+```typescript
+// Current (WRONG):
+exactSize <= combineDataTable[i].areaType['grossFloorArea'].areaLowerBound! && 
+exactSize >= combineDataTable[i].areaType['grossFloorArea'].areaLowerBound!
+
+// Should be:
+exactSize >= combineDataTable[i].areaType['grossFloorArea'].areaLowerBound! && 
+exactSize <= combineDataTable[i].areaType['grossFloorArea'].areaUpperBound!
+```
+
+## Fixed Code:
+
+```typescript
+static getSizeRange(exactSize: number, combineDataTable: MergePlan[], areaType: string): number {
+    for (let i = 0; i < combineDataTable.length; i++) {
+        if (areaType == 'Saleable area (sq. ft.)') {
+            const saleableArea = combineDataTable[i].areaType.saleableArea;
+            console.log(exactSize, combineDataTable, areaType, saleableArea.areaUpperBound, saleableArea.areaLowerBound);
+            
+            // Check if this is the last range (no upper bound)
+            if (saleableArea.areaUpperBound == null && exactSize >= saleableArea.areaLowerBound) {
+                return i;
+            } 
+            // Check if exactSize falls within the range
+            else if (saleableArea.areaUpperBound != null && 
+                     exactSize >= saleableArea.areaLowerBound && 
+                     exactSize <= saleableArea.areaUpperBound) {
+                return i;
+            }
+        }
+        
+        if (areaType == 'Gross floor area (sq. ft.)') {
+            const grossFloorArea = combineDataTable[i].areaType.grossFloorArea;
+            console.log('grossable ' + i);
+            
+            // Check if this is the last range (no upper bound)
+            if (grossFloorArea.areaUpperBound == null && exactSize >= grossFloorArea.areaLowerBound) {
+                return i;
+            } 
+            // Check if exactSize falls within the range
+            else if (grossFloorArea.areaUpperBound != null && 
+                     exactSize >= grossFloorArea.areaLowerBound && 
+                     exactSize <= grossFloorArea.areaUpperBound) {
+                return i;
+            }
+        }
+    }
+    
+    // Return -1 if no matching range is found (instead of returning i which would be out of bounds)
+    return -1;
+}
+```
+
+## Key Changes:
+
+1. **Fixed the range comparison logic** - now properly checks if `exactSize` is between `areaLowerBound` and `areaUpperBound`
+1. **Used proper variable names** for clarity (`saleableArea`, `grossFloorArea`)
+1. **Added null checks** for `areaUpperBound` before using it in comparisons
+1. **Return -1** when no match is found instead of returning the out-of-bounds index
+1. **Simplified the loop declaration** to `for (let i = 0; ...)`
+
+The main issue was that you were comparing `exactSize` with `areaLowerBound` twice instead of comparing it with both `areaLowerBound` and `areaUpperBound`.​​​​​​​​​​​​​​​​
+
+
+
 ````
  static getSizeRange(exactSize: number, combineDataTable: MergePlan[], areaType: string): number {
         let i = 0;
