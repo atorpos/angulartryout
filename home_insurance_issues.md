@@ -1,5 +1,10 @@
 ### issues
 
+````
+                  this.landlordProtectorForm.controls['insuredInformationForm'].controls['address'].setValue(results.threelinesAddress.addressLines);
+
+````
+
 Looking at your code, I can see several issues that are preventing the loop from working correctly:
 
 ## Main Issues:
